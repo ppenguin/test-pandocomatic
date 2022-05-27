@@ -1,5 +1,7 @@
 .direnv/
+plantuml-images/
 
 *.pdf
 *.out
 *.log
+*.pdf.bak
