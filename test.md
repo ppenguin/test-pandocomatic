@@ -16,7 +16,7 @@ pandocomatic_:
       from: markdown
       to: pdf
       pdf-engine: lualatex
-      template: templates/divlatex/eisvogel.tex
+      template: templates/eisvogel.tex
       verbose: true
       variable:
         - papersize=A4

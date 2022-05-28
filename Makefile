@@ -11,3 +11,6 @@ clean:
 
 test_minmin.pdf: test_minmin.md defaults.yaml
 	pandoc --defaults defaults.yaml $< -o $@ && $(PDFVIEWER) $@
+
+test_minimal.pdf: test_minimal.md
+	pandocomatic -b --data-dir=$(CURDIR) -o $@ $< && $(PDFVIEWER) $@
