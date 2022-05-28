@@ -7,7 +7,7 @@ clean:
 	rm -f *.pdf* *.out *.docx
 
 %.pdf: %.md
-	./md2pdf.sh $<
+	pandocomatic -b -o $@ $< && $(PDFVIEWER) $@
 
 test_minmin.pdf: test_minmin.md defaults.yaml
 	pandoc --defaults $(firstword $(filter %.yaml,$^)) $< -o $@ && $(PDFVIEWER) $@

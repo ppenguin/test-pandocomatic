@@ -17,7 +17,7 @@ pandocomatic_:
       to: pdf
       pdf-engine: lualatex
       template: ./templates/eisvogel.tex
-      verbose: true
+      verbose: false
       variable:
         - papersize=A4
         - graphics=true
