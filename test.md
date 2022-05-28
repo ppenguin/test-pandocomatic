@@ -22,18 +22,18 @@ pandocomatic_:
         - papersize=A4
         - graphics=true
         - geometry=a4paper,bindingoffset=0.3in,left=1in,right=1in,top=1in,bottom=1.2in,footskip=.6in
-      toc: true
+      toc: false
       toc-depth: 2
       number-sections: true
       filter:
         - pandoc-include
         - pandoc-crossref
       lua-filter:
-        - diagram-generator.lua
+        - filters/diagram-generator.lua
       citeproc: true # !!! http://lierdakil.github.io/pandoc-crossref/#citeproc-and-pandoc-crossref
       bibliography:
-        - ./testbib.bib
-      csl: bib/computer.csl
+        - ./bib/testbib.bib
+      csl: ./bib/computer.csl
     postprocessors: []
 
 ---
