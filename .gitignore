@@ -5,3 +5,4 @@ plantuml-images/
 *.out
 *.log
 *.pdf.bak
+*.docx
