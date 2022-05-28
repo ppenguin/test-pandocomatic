@@ -1,6 +1,6 @@
 PDFVIEWER ?= okular
 
-.PHONY: clean all pdf%
+.PHONY: clean all pdf% tstpipe
 all: test_minmin.pdf
 
 clean:
@@ -14,3 +14,6 @@ test_minmin.pdf: test_minmin.md defaults.yaml
 
 test_minimal.pdf: test_minimal.md
 	pandocomatic -b --data-dir=$(CURDIR) -o $@ $< && $(PDFVIEWER) $@
+
+tstpipe: test_minmin.md defaults.yaml
+	pandoc --defaults $(firstword $(filter %.yaml,$^)) -o $(subst .md,-tstpipe.pdf,$<) < $< && $(PDFVIEWER) $(subst .md,-tstpipe.pdf,$<)
