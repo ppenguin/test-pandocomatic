@@ -16,4 +16,4 @@ test_minimal.pdf: test_minimal.md
 	pandocomatic -b --data-dir=$(CURDIR) -o $@ $< && $(PDFVIEWER) $@
 
 tstpipe: test_minmin.md defaults.yaml
-	pandoc --defaults $(firstword $(filter %.yaml,$^)) -o $(subst .md,-tstpipe.pdf,$<) < $< && $(PDFVIEWER) $(subst .md,-tstpipe.pdf,$<)
+	pandoc --verbose --defaults $(firstword $(filter %.yaml,$^)) -o $(subst .md,-tstpipe.pdf,$<) < $< && $(PDFVIEWER) $(subst .md,-tstpipe.pdf,$<)
